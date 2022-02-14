@@ -1,0 +1,2 @@
+echo "Broadcast address:" && ifconfig en0 | grep "broadcast" | cut -f6 -d " "
+echo "All IP addresses of this subnet:" && arp -a | cut -f2 -d "(" | cut -f1 -d ")"
