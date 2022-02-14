@@ -1,0 +1,1 @@
+netstat -rn | tr -s " " | grep -A 2 Internet: | grep default | cut -f2 -d " "
