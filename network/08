@@ -1,0 +1,2 @@
+provider_ip=$(dig +short who.int)
+whois $provider_ip | tr -s " " | grep OrgName | cut -f2-3 -d " "
