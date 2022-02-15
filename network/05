@@ -1,0 +1,1 @@
+host who.int | grep address | cut -f4 -d " "
