@@ -1,0 +1,4 @@
+c2r1p2.hive.fi
+
+# to get any school apple's host name:
+# host $(ipconfig getifaddr en0)
