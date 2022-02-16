@@ -1,0 +1,5 @@
+nat (10.60.1.1)
+
+# Deducting from the previous command
+# the link between locak network and the outside world
+# happens at nat -  ffter network address translation
