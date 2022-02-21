@@ -1,0 +1,4 @@
+cat /var/run/sshd.pid
+# tells the PID
+# the whole process can be found with the following command;
+ps axu | grep "sshd:" | grep -v grep
