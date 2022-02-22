@@ -1,0 +1,3 @@
+pkill -9 tail
+# or
+# kill -9 $(jobs -l | tr -s " " | cut -d " " -f2)
