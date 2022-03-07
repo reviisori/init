@@ -1,0 +1,12 @@
+Cron command can be used to run tasks as scheduled
+# To schedule a task use:
+
+# crontab -e
+
+# When and what:
+
+# m h	dom mon dow		command
+
+# To see created tasks use:
+
+# crontab -l
