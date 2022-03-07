@@ -1,0 +1,7 @@
+ssh virtual_user@<ip> -p <host_port>
+
+# this needs setting up:
+# 1. install ssh
+# 2. get VM's ip
+# 3. open a port for guest in VM's settings
+# 4. use command, for instance I used: ssh revi@127.0.0.1 - p 2222
