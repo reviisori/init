@@ -1,0 +1,5 @@
+apt list -i
+
+# also an option is:
+# dpkg-query -l
+# '| less' can be used with both commands to get less info about packages
