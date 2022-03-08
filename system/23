@@ -1,0 +1,24 @@
+# ***GRAPHIC SESSION***
+# to do this in a terminal some steps need to be taken:
+
+# 1. sudo useradd -m new_user
+#	- the m-flag creates a home directory for the new user just to be safe
+# 2. sudo passwd new_user
+#	- again to be safe
+# 3. cat /etc/passwd
+#	- check new user's default shell
+# 4. sudo usermod -s /bin/bash new_user
+#	- switching default shell to bash is key on Ubuntu/Debian
+#	- or /usr/bin/bash
+# 5. sudo su new_user
+#	- switching user should be now possible. type 'exit' to switch out
+
+# ***SSH SESSION***
+
+# 5. sudo exec su new_user
+#	- hand existing connection to another user without the need to reconnect
+
+# delete new_user and user's home directory when done:
+
+# 6. sudo userdel -r new_user
+#	- the r-flag deletes user's home dir and mail spool
