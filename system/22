@@ -1,1 +1,3 @@
 sudo useradd MARVIN
+
+# to delete user use: sudo userdel MARVIN
