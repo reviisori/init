@@ -1,0 +1,16 @@
+#! /bin/bash
+
+printf "Select which user to \x1B[31mdelete\x1B[0m:\n\n"
+cut -d: -f1,3 /etc/passwd | egrep ':[0-9]{4}$' | cut -d: -f1
+printf "\n"
+
+read DELETE
+
+ANSWER=( `echo $DELETE`)
+
+printf "\nDeleting \x1B[33m$ANSWER\x1B[0m...\n"
+sudo userdel -r $ANSWER
+sleep 0.7
+
+printf "User deleted.\n"
+exit
