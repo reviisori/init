@@ -1,0 +1,12 @@
+#! /bin/bash
+
+printf "Type user's \x1B[32mname\x1B[0m to be added:\n"
+
+read ADD
+
+ANSWER=( `echo $ADD`)
+
+sudo useradd -m $ANSWER
+sleep 0.7
+printf "User created.\n"
+exit
