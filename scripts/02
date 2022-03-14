@@ -8,9 +8,13 @@ read DELETE
 
 ANSWER=( `echo $DELETE`)
 
-printf "\nDeleting \x1B[33m$ANSWER\x1B[0m...\n"
-sudo userdel -r $ANSWER
-sleep 0.7
-
-printf "User deleted.\n"
+if grep -Fwq "$ANSWER" /etc/passwd
+then
+	printf "\nDeleting \x1B[33m$ANSWER\x1B[0m...\n"
+	sudo userdel -r $ANSWER
+	sleep 0.7
+	printf "User deleted.\n"
+else
+	printf "Not a user. Goodbye!\n"
+fi
 exit
