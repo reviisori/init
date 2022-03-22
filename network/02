@@ -1,2 +1,6 @@
 echo "Broadcast address:" && ifconfig en0 | grep "broadcast" | cut -f6 -d " "
-echo "All IP addresses of this subnet:" && arp -a | cut -f2 -d "(" | cut -f1 -d ")"
+echo "All IP addresses of this subnet:"
+TO_PING=$(ifconfig en0 | grep "broadcast" | cut -f6 -d " ")
+ping -c3 $TO_PING 2>&1 >/dev/null
+SUBNET=$((ifconfig en0 | grep "broadcast" | cut -f6 -d " ") | cut -f1-2 -d ".")
+arp -a | grep $SUBNET | cut -f2 -d "(" | cut -f1 -d ")"
