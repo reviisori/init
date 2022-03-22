@@ -15,14 +15,21 @@ do
 	sleep 0.7
 	printf "User created.\n"
 
-	printf "\x1B[0m Do you want add another user (\x1B[32m yes\x1B[0m /\x1B[31m no\x1B[0m )?\n"
-	read ANSWER
-	if [ "$ANSWER" == "yes" ]
-	then
-			continue
-	elif [ "$ANSWER" == "no" ]
-	then
+	while [[ true ]]
+	do
+
+		printf "\x1B[0m Do you want add another user (\x1B[32m yes\x1B[0m /\x1B[31m no\x1B[0m )?\n"
+		read ANSWER
+		if [ "$ANSWER" == "yes" ]
+		then
+			break
+		elif [ "$ANSWER" == "no" ]
+		then
 			exit
-	fi
+		else
+			printf "I hope that was a typo...\n"
+			continue
+		fi
+	done
 
 done
