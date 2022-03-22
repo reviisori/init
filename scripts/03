@@ -1,12 +1,28 @@
 #! /bin/bash
 
-printf "Type user's \x1B[32mname\x1B[0m to be added:\n"
+ANSWER="-"
 
-read ADD
+while [[ true ]]
+do
 
-ANSWER=( `echo $ADD`)
+	printf "Type user's \x1B[32mname\x1B[0m to be added:\n"
 
-sudo useradd -m $ANSWER
-sleep 0.7
-printf "User created.\n"
-exit
+	read ADD
+
+	USER=( `echo $ADD`)
+
+	sudo useradd -m $USER
+	sleep 0.7
+	printf "User created.\n"
+
+	printf "\x1B[0m Do you want add another user (\x1B[32m yes\x1B[0m /\x1B[31m no\x1B[0m )?\n"
+	read ANSWER
+	if [ "$ANSWER" == "yes" ]
+	then
+			continue
+	elif [ "$ANSWER" == "no" ]
+	then
+			exit
+	fi
+
+done
